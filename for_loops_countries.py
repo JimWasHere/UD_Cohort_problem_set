@@ -4,11 +4,8 @@
 
 
 
-# [ ] What country names are > 50% vowels?
-#
-# Setting up storage to use during a for loop, including counters and arrays
-#
-# [ ] What is the shortest country name? Make sure your solution can handle ties.
+
+
 # [ ] What countries use only one vowel in their name (the vowel can be used multiple times)
 #     - For example, if the word “BEEKEEPER” were a country, it would be an answer, because it only uses “E”.
 # [ ] There is at least one country name that contains another country name. Find all of these cases.
@@ -37,5 +34,26 @@ def beg_end_vowel(words):
                 lst.append(x)
     return lst
 
-print(beg_end_vowel(data))
+
+# [ ] What country names are > 50% vowels?
+def half_vowels(words):
+    result = []
+    for word in words:
+        vowels = []
+        for x in word:
+            if x.lower() in "aeiou":
+                vowels.append(x)
+        if len(vowels) > len(word) // 2:
+            result.append(word)
+    return result
+
+
+#
+# Setting up storage to use during a for loop, including counters and arrays
+#
+# [ ] What is the shortest country name? Make sure your solution can handle ties.
+
+
+# print(half_vowels(data))
+# print(beg_end_vowel(data))
 # print(united(data))
