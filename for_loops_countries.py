@@ -8,7 +8,7 @@
 
 
 #     - For example, if the word “BEEKEEPER” were a country, it would be an answer, because it only uses “E”.
-# [ ] There is at least one country name that contains another country name. Find all of these cases.
+
 
 with open("data/countries.txt") as data:
     data = {x.strip() for x in data.readlines()}
@@ -77,8 +77,21 @@ def one_vowel(words):
     return result
 
 
+# [ ] There is at least one country name that contains another country name. Find all of these cases.
+def country_name(words):
+    result = []
+    for x in words:
+        for y in words:
+            if x in y and x != y:
+                result.append(y)
 
-print(one_vowel(data))
+    return result
+
+
+print(country_name(data))
+
+
+# print(one_vowel(data))
 # print(shortest(data))
 # print(half_vowels(data))
 # print(beg_end_vowel(data))
