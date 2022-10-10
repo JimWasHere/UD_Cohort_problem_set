@@ -2,7 +2,7 @@
 # sowpods.txt #
 
 
-with open("data/sowpods.txt") as data:
+with open("practice_problems/sowpods.txt") as data:
     data = {x.strip() for x in data.readlines()}
     # print(data)
 
@@ -119,6 +119,7 @@ def ghtly(words):
     for x in words:
         if x.endswith("GHTLY"):
             lst.append(x)
+            print(x)
     return lst
 
 
